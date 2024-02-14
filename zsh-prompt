@@ -1,3 +1,25 @@
+#--------------------------------
+#GIT
+# Load version control information
+autoload -Uz add-zsh-hook vcs_info
+precmd() { vcs_info }
+#
+# Format the vcs_info_msg_0_ variable
+#zstyle ':vcs_info:git::completion*' formats 'on branch %b'
+# 
+# Set up the prompt (with git branch name)
+setopt PROMPT_SUBST
+
+add-zsh-hook precmd vcs_info
+#PROMPT='%n in ${PWD/#$HOME/~} ${vcs_info_msg_0_} > '
+
+
+#KALI default:
+#PROMPT='%F{%(#.blue.green)}┌──(%B%F{%(#.red.blue)}%n%(#.💀.㉿)%m%b%F{%(#.blue.green)})-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.blue.green)}]\n└─%B%(#.%F>
+
+zstyle ':vcs_info:git:*' formats '(%b%u%c)'
+
+
 PROMPT=$'%F{8}%*\n┌───%f%F{red}%n 💀 %f%F{166}%m%f %F{178}%/%f \n%F{8}└─%f%F{blue}${vcs_info_msg_0_}%f $  '
 PROMPT=$'%F{52}┌───%f%F{red}%n 💀 %f%F{166}%m%f %F{178}%/%f \n%F{52}└─%f%F{blue}${vcs_info_msg_0_}%f $  '
 #pitää olla $ alussa jotta \n line break toimii
