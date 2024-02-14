@@ -1,0 +1,4 @@
+PROMPT=$'%F{8}%*\n┌───%f%F{red}%n 💀 %f%F{166}%m%f %F{178}%/%f \n%F{8}└─%f%F{blue}${vcs_info_msg_0_}%f $  '
+PROMPT=$'%F{52}┌───%f%F{red}%n 💀 %f%F{166}%m%f %F{178}%/%f \n%F{52}└─%f%F{blue}${vcs_info_msg_0_}%f $  '
+#pitää olla $ alussa jotta \n line break toimii
+RPROMPT='%F{8}%D{%L:%M:%S}%f '
